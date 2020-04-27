@@ -32,7 +32,7 @@ while True:
     replace_line('config.ini', 23, 'State='+y["url"][0:64]+'\n')
     replace_line('config.ini', 24, 'Details='+y["title"][0:64]+'\n')
     replace_line('config.ini', 25, 'StartTimestamp='+str(y["time"])+'\n')
-    if (y["logo"] not in known_sites_list):
+    if (y.get("logo","default") not in known_sites_list):
         replace_line('config.ini', 29, 'LargeImage=default\n')
     else:
         replace_line('config.ini', 29, 'LargeImage='+y["logo"]+'\n')
